@@ -4,6 +4,7 @@ using Taskflow.Api.Data;
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
+builder.Services.AddHealthChecks();
 builder.Services.AddDbContext<TaskflowDbContext>(options =>
     options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
 
@@ -18,4 +19,5 @@ using (var scope = app.Services.CreateScope())
 
 app.UseHttpsRedirection();
 app.MapControllers();
+app.MapHealthChecks("/healthz");
 app.Run();
