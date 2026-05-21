@@ -28,6 +28,15 @@ spec:
                 secretKeyRef:
                   name: taskflow-secrets
                   key: connection-string
+            - name: Jwt__Key
+              valueFrom:
+                secretKeyRef:
+                    name: taskflow-secrets
+                    key: jwt-key
+            - name: Jwt__Issuer
+              value: "taskflow"
+            - name: Jwt__Audience
+              value: "taskflow"
           resources:
             requests:
               cpu: "250m"
