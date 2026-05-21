@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 
-namespace Taskflow.Api.Models;
+namespace Taskflow.Models;
 
 [Table("tasks")]
 public class TaskItem

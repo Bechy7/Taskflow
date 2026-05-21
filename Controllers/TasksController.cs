@@ -1,10 +1,12 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using Taskflow.Api.Data;
-using Taskflow.Api.Models;
+using Taskflow.Data;
+using Taskflow.Models;
 
-namespace Taskflow.Api.Controllers;
+namespace Taskflow.Controllers;
 
+[Authorize]
 [ApiController]
 [Route("api/[controller]")]
 public class TasksController : ControllerBase
